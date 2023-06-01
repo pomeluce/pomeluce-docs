@@ -6,7 +6,7 @@ export default defineConfig({
   title: 'Pomeluce Docs',
   description: 'Pomeluce 文档库',
   head: [
-    ['link', { rel: 'icon', href: '/pomeluce.ico' }],
+    ['link', { rel: 'icon', href: '/docs/pomeluce.ico' }],
   ],
   base: '/docs/',
   lastUpdated: true,
