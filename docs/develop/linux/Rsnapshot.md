@@ -12,7 +12,7 @@ yum install rsnapshot -y
 
 ## 2.ssh免密配置
 
-具体内容见: [ssh 免密配置](./ssh免密登录.md)
+具体内容见: [ssh 免密配置](./SSHPassfree.md)
 
 ## 3.软件配置
 
