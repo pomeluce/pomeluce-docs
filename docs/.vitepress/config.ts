@@ -5,6 +5,9 @@ import { siderbarJava, siderbarWeb, siderbarLinux, siderbarDatabase, siderbarBug
 export default defineConfig({
   title: 'Pomeluce Docs',
   description: 'Pomeluce 文档库',
+  head: [
+    ['link', { rel: 'icon', href: '/pomeluce.ico' }],
+  ],
   base: '/docs/',
   lastUpdated: true,
   themeConfig: {
