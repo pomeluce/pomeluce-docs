@@ -10,6 +10,17 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     outlineTitle: '本页目录',
+    search: {
+      provider: 'local',
+      options: {
+        translations: {
+          button: {
+            buttonText: '搜索文档'
+          }
+
+        }
+      }
+    },
     nav: [
       { text: '主页', link: '/' },
       {
