@@ -6,9 +6,7 @@ hero:
   name: 'Pomeluce Docs'
   text: 'Pomeluce 文档库'
   tagline: 📚 知识累积ing...
-  image:
-    - src: /logo.png
-      alt: Pomeluce Docs
+  image: /logo.png
   actions:
     - theme: brand
       text: 开始
