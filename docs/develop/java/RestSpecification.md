@@ -1,4 +1,4 @@
-# restful 接口规范
+# Restful 接口规范
 
 ## 1.url 接口语法
 
@@ -55,5 +55,4 @@ url通用接口如下: `URI = scheme"://"host:port"/"path["?"query]["#"fragment]
   | PUT/collections/:id    | 返回完整的资源对象   |
   | PATCH/collections/:id  | 返回被修改的属性     |
   | DELETE/collections/:id | 返回一个空文档       |
-
 

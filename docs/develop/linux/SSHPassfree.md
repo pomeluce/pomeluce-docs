@@ -1,6 +1,6 @@
 # ssh 免密登录
 
-## 1.配置sshd_config
+## 1.配置 sshd_config
 
 服务端开启免密登录配置, 配置文件位置: `/etc/ssh/sshd_config`, 开启如下配置, 修改完之后之执行 `systemctl restart sshd` 重启服务
 

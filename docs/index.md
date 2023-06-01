@@ -9,10 +9,10 @@ hero:
   actions:
     - theme: brand
       text: 开始
-      link: /develop/java/java基础
+      link: /develop/java/JavaBasics
     - theme: alt
       text: 在 Github 查看
-      link: https://github.com/pomeluce/docslibrary
+      link: https://github.com/pomeluce/pomeluce-docs
 
 features:
   - title: 🏷️ Vue
