@@ -5,24 +5,23 @@ import { siderbarJava, siderbarWeb, siderbarLinux, siderbarDatabase, siderbarBug
 export default defineConfig({
   title: 'Pomeluce Docs',
   description: 'Pomeluce 文档库',
-  head: [
-    ['link', { rel: 'icon', href: '/docs/pomeluce.ico' }],
-  ],
+  head: [['link', { rel: 'icon', href: '/docs/pomeluce.ico' }]],
   base: '/docs/',
+  lang: 'zh-CN',
   lastUpdated: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     outlineTitle: '本页目录',
+    lastUpdatedText: '最后一次更新于',
     search: {
       provider: 'local',
       options: {
         translations: {
           button: {
-            buttonText: '搜索文档'
-          }
-
-        }
-      }
+            buttonText: '搜索文档',
+          },
+        },
+      },
     },
     nav: [
       { text: '主页', link: '/' },
