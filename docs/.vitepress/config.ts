@@ -9,6 +9,9 @@ export default defineConfig({
   base: '/docs/',
   lang: 'zh-CN',
   lastUpdated: true,
+  markdown: {
+    theme: "one-dark-pro",
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     outlineTitle: '本页目录',
