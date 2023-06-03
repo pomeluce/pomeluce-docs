@@ -13,6 +13,10 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     outlineTitle: '本页目录',
     lastUpdatedText: '最后一次更新于',
+    docFooter: {
+      prev: '上一篇',
+      next: '下一篇',
+    },
     search: {
       provider: 'local',
       options: {
