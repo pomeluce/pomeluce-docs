@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: 开始
-      link: /develop/java/JavaBasics
+      link: /develop/java/javabase/java001
     - theme: alt
       text: 在 Github 查看
       link: https://github.com/pomeluce/pomeluce-docs

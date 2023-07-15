@@ -1,4 +1,4 @@
-# ssh 免密登录
+# SSH 免密登录
 
 ## 1.配置 sshd_config
 

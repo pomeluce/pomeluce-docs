@@ -1,4 +1,4 @@
-# rsnapshot 备份
+# Rsnapshot 备份
 
 ## 1.软件安装
 
@@ -7,12 +7,13 @@
 pacman -S rsnapshot
 
 # centos
+yum install epel-release -y # 如果之前没安装过第三方库 EPEL
 yum install rsnapshot -y
 ```
 
 ## 2.ssh免密配置
 
-具体内容见: [ssh 免密配置](./SSHPassfree.md)
+具体内容见: [ssh 免密配置](../syserver/syserver001.md)
 
 ## 3.软件配置
 
@@ -74,7 +75,7 @@ logfile /var/log/rsnapshot
 
 # backup 要备份的目录           备份文件存储目录
 backup /home/example/data/     local/  #备份本地目录
-backup ssh@ip:/example/data/   remote/ #备份远程目录
+backup root@ip:/example/data/   remote/ #备份远程目录
 ```
 
 > Ps: 由于上面已经配置过 rsnapshot_root 目录, 所以这里不用写全路径 /data/backup/local/ 和 /data/backup/remote/

@@ -37,29 +37,29 @@ export default defineConfig({
         items: [
           {
             text: 'Java 合集',
-            link: '/develop/java/JavaBasics',
+            link: '/develop/java/javabase/java001',
             activeMatch: '/develop/java/',
           },
           {
             text: 'Ts + Vue',
-            link: '/develop/web/IfConditional',
+            link: '/develop/web/javascript/js001',
             activeMatch: '/develop/web/',
           },
           {
             text: 'Linux 系统',
-            link: '/develop/linux/SSHPassfree',
+            link: '/develop/linux/syserver/syserver001',
             activeMatch: '/develop/linux/',
           },
           {
-            text: '数据库、中间件',
-            link: '/develop/database/SpecifySerialNum',
+            text: '数据库',
+            link: '/develop/database/psql/psql001',
             activeMatch: '/develop/database/',
           },
         ],
       },
       {
         text: 'Bug 合集',
-        link: '/bugs/BoxShadowInvalid',
+        link: '/bugs/bug001',
         activeMatch: '/bugs/',
       },
     ],

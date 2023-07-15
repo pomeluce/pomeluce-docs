@@ -1,97 +1,66 @@
+const initList = (names: string[], prefix: string): Array<{ text: string; link: string }> => {
+  return Array.from(names, (name, index) => {
+    return { text: name, link: `${prefix}${(index + 1).toString().padStart(3, '0')}` };
+  });
+};
+
 export const siderbarJava = () => {
   return [
-    {
-      text: 'Java 基础',
-      collapsed: false,
-      items: [{ text: '基础知识点', link: '/develop/java/JavaBasics' }],
-    },
-    {
-      text: 'Spring 框架',
-      collapsed: false,
-      items: [
-        { text: 'Restful 接口规范', link: '/develop/java/RestSpecification' },
-        { text: 'Get 请求参数接受', link: '/develop/java/GetRequestParam' },
-        { text: 'SSH 整合 Struts 配置路径', link: '/develop/java/StrutsConfPath' },
-      ],
-    },
+    { text: 'Java 基础', collapsed: false, items: initList(javaNames, '/develop/java/javabase/java') },
+    { text: 'Spring 框架', collapsed: false, items: initList(springNames, '/develop/java/spring/spring') },
   ];
 };
 
 export const siderbarWeb = () => {
   return [
-    {
-      text: 'Javascript',
-      collapsed: false,
-      items: [
-        { text: 'If 判断条件', link: '/develop/web/IfConditional' },
-        { text: '三元运算符', link: '/develop/web/TernaryOperator' },
-      ],
-    },
-    {
-      text: 'Other',
-      collapsed: false,
-      items: [
-        { text: '跨域解决方案', link: '/develop/web/CrossSolution' },
-        { text: 'Cors 跨域资源共享', link: '/develop/web/CorsResourceShare' },
-      ],
-    },
+    { text: 'Javascript', collapsed: false, items: initList(jsNames, '/develop/web/javascript/js') },
+    { text: 'Other', collapsed: false, items: initList(webOtherNames, '/develop/web/other/other') },
   ];
 };
 
 export const siderbarLinux = () => {
   return [
-    {
-      text: '系统服务',
-      collapsed: false,
-      items: [{ text: 'SSH 免密登录', link: '/develop/linux/SSHPassfree' }],
-    },
-    {
-      text: '软件配置',
-      collapsed: false,
-      items: [
-        { text: 'Rsnapshot 备份', link: '/develop/linux/Rsnapshot' },
-        { text: 'ElasticSerach 配置', link: '/develop/linux/ElasticRelevant' },
-      ],
-    },
+    { text: '系统服务', collapsed: false, items: initList(syserverNames, '/develop/linux/syserver/syserver') },
+    { text: '软件配置', collapsed: false, items: initList(softwareNames, '/develop/linux/software/software') },
+    { text: 'Nginx 服务', collapsed: false, items: initList(nginxNames, '/develop/linux/nginx/nginx') },
   ];
 };
 
 export const siderbarDatabase = () => {
   return [
-    {
-      text: 'MySql',
-      collapsed: false,
-      items: [
-        { text: '指定序号自增', link: '/develop/database/SpecifySerialNum' },
-        { text: 'MySQL 配置注意事项', link: '/develop/database/MySQLConfNotice' },
-      ],
-    },
-    {
-      text: 'Redis',
-      collapsed: false,
-      items: [{ text: 'Redis 汇总', link: '/develop/database/RedisMap' }],
-    },
-    {
-      text: 'Nginx',
-      collapsed: false,
-      items: [{ text: 'Nginx 汇总', link: '/develop/database/NginxMap' }],
-    },
+    { text: 'PostgreSQL', collapsed: false, items: initList(psqlNames, '/develop/database/psql/psql') },
+    { text: 'MySql', collapsed: false, items: initList(mysqlNames, '/develop/database/mysql/mysql') },
+    { text: 'Redis', collapsed: false, items: initList(redisNames, '/develop/database/redis/redis') },
   ];
 };
 
-export const siderbarBug = () => {
-  return [
-    { text: 'box-shadow 属性无效', link: '/bugs/BoxShadowInvalid' },
-    { text: 'Struts2 配置通配符错误', link: '/bugs/StrutSwildcardError' },
-    { text: 'Feign 调用 500 错误', link: '/bugs/Feign500' },
-    { text: 'Thymeleaf 错误', link: '/bugs/ThymeleafError' },
-    { text: 'Long 转 Json 精度损失', link: '/bugs/LongToJsonPrecisionLoss' },
-    { text: 'LocalDate 转 Json 格式问题', link: '/bugs/LocalDateTimestamp' },
-    { text: 'Tomcat 相关错误', link: '/bugs/TomcatErrorMap' },
-    { text: 'Mybatis 不支持类型错误', link: '/bugs/MyBatisUnsupportOper' },
-    { text: 'MySql 修改异常', link: '/bugs/MysqlUpdateError' },
-    { text: 'Hibernate 通配符错误', link: '/bugs/HibernateSwildcardError' },
-    { text: 'SSM 连接池错误', link: '/bugs/SSMDatapollError' },
-    { text: '@Value 注解 Static 无效', link: '/bugs/ValueAnnoStaticInvalid' },
-  ];
-};
+export const siderbarBug = () => initList(bugNames, '/bugs/bug');
+
+const javaNames: string[] = ['基础知识点'];
+const springNames: string[] = ['Restful 接口规范', 'Get 请求参数接受', 'SSH 整合 Struts 配置路径'];
+
+const jsNames: string[] = ['If 判断条件', '三元运算符'];
+const webOtherNames: string[] = ['跨域解决方案', 'Cors 跨域资源共享'];
+
+const syserverNames: string[] = ['SSH 免密登录'];
+const softwareNames: string[] = ['Rsnapshot 备份', 'ElasticSerach 配置'];
+const nginxNames: string[] = ['Nginx 汇总'];
+
+const psqlNames: string[] = ['PostgreSQL 安装', 'PostgreSQL 语法', 'PostgreSQL DDL'];
+const mysqlNames: string[] = ['指定序号自增', 'MySQL 配置注意事项'];
+const redisNames: string[] = ['Redis 汇总'];
+
+const bugNames: string[] = [
+  'box-shadow 属性无效',
+  'Struts2 配置通配符错误',
+  'Feign 调用 500 错误',
+  'Thymeleaf 错误',
+  'Long 转 Json 精度损失',
+  'LocalDate 转 Json 格式问题',
+  'Tomcat 相关错误',
+  'Mybatis 不支持类型错误',
+  'MySql 修改异常',
+  'Hibernate 通配符错误',
+  'SSM 连接池错误',
+  '@Value 注解 Static 无效',
+];
