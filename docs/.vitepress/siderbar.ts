@@ -46,7 +46,7 @@ const syserverNames: string[] = ['SSH 免密登录'];
 const softwareNames: string[] = ['Rsnapshot 备份', 'ElasticSerach 配置'];
 const nginxNames: string[] = ['Nginx 汇总'];
 
-const psqlNames: string[] = ['PostgreSQL 安装', 'PostgreSQL 语法', 'PostgreSQL DDL'];
+const psqlNames: string[] = ['PostgreSQL 安装', 'PostgreSQL 语法', 'PostgreSQL 数据类型', 'PostgreSQL DDL'];
 const mysqlNames: string[] = ['指定序号自增', 'MySQL 配置注意事项'];
 const redisNames: string[] = ['Redis 汇总'];
 

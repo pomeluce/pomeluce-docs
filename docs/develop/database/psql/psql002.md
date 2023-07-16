@@ -8,7 +8,7 @@
 psql -U dbuser -d exampledb -h 127.0.0.1 -p 5432
 ```
 
-2. 在终端直接执行 psql 命令, 会以 **当前系统用户名** 作为 <u><span style=background:yellow>用户名和数据库名</span></u> 进行登录
+2. 在终端直接执行 psql 命令, 会以 **当前系统用户名** 作为 <u><span style='background:yellow; color: black'>用户名和数据库名</span></u> 进行登录
 
 ```zsh
 # 等同于 psql -U '当前系统用户名' -d '当前系统用户名'
