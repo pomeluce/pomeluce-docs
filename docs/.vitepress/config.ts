@@ -1,16 +1,23 @@
 import { defineConfig } from 'vitepress';
-import { siderbarJava, siderbarWeb, siderbarLinux, siderbarDatabase, siderbarBug } from './siderbar';
+import markdownItKatex from 'markdown-it-katex';
+import { siderbarJava, siderbarWeb, siderbarLinux, siderbarDatabase, siderbarBug, siderbarAlgorithm } from './siderbar';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'Pomeluce Docs',
   description: 'Pomeluce 文档库',
-  head: [['link', { rel: 'icon', href: '/docs/pomeluce.ico' }]],
+  head: [
+    ['link', { rel: 'icon', href: '/docs/pomeluce.ico' }],
+    ['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css', crossorigin: '' }],
+  ],
   base: '/docs/',
   lang: 'zh-CN',
   lastUpdated: true,
   markdown: {
-    theme: "one-dark-pro",
+    theme: 'one-dark-pro',
+    config: md => {
+      md.use(markdownItKatex);
+    },
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -62,6 +69,11 @@ export default defineConfig({
         link: '/bugs/bug001',
         activeMatch: '/bugs/',
       },
+      {
+        text: '算法合集',
+        link: '/algorithm/topic/topic001',
+        activeMatch: '/algorithm/',
+      },
     ],
 
     sidebar: {
@@ -70,6 +82,7 @@ export default defineConfig({
       '/develop/linux/': siderbarLinux(),
       '/develop/database/': siderbarDatabase(),
       '/bugs/': siderbarBug(),
+      '/algorithm/': siderbarAlgorithm(),
     },
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/pomeluce/pomeluce-docs' }],

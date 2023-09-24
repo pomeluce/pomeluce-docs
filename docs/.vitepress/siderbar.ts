@@ -36,6 +36,14 @@ export const siderbarDatabase = () => {
 
 export const siderbarBug = () => initList(bugNames, '/bugs/bug');
 
+export const siderbarAlgorithm = () => {
+  return [
+    { text: '设计模式', collapsed: false, items: [] },
+    { text: '数据结构', collapsed: false, items: [] },
+    { text: '算法题', collapsed: false, items: initList(algorithmTopics, '/algorithm/topic/topic') },
+  ];
+};
+
 const javaNames: string[] = ['基础知识点'];
 const springNames: string[] = ['Restful 接口规范', 'Get 请求参数接受', 'SSH 整合 Struts 配置路径'];
 
@@ -64,3 +72,5 @@ const bugNames: string[] = [
   'SSM 连接池错误',
   '@Value 注解 Static 无效',
 ];
+
+const algorithmTopics: string[] = ['判断点是否在多边形内'];

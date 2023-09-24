@@ -15,9 +15,9 @@ create database pomelucedb;
 
 **2. createdb 命令创建数据库**
 
-* createdb 是一个 SQL 命令 create database 的封装
+- createdb 是一个 SQL 命令 create database 的封装
 
-* createdb 命令语法格式如下:
+- createdb 命令语法格式如下:
 
 ```sql
 createdb [option...] [dbname [description]]
@@ -25,11 +25,11 @@ createdb [option...] [dbname [description]]
 
 :::tip **参数说明：**
 
-* **dbname**: 要创建的数据库名
+- **dbname**: 要创建的数据库名
 
-* **description**: 关于新创建的数据库相关的说明
+- **description**: 关于新创建的数据库相关的说明
 
-* **options**: 参数可选项，可以是以下值:
+- **options**: 参数可选项，可以是以下值:
 
 | 选项              | 描述                                     |
 | ----------------- | :--------------------------------------- |
@@ -47,22 +47,22 @@ createdb [option...] [dbname [description]]
 
 :::
 
-* 打开终端, 使用 createdb 命令进行数据库创建
+- 打开终端, 使用 createdb 命令进行数据库创建
 
 ```zsh
 $ createdb -h localhost -p 5432 -U postgres pomelucedb
 password ******
 ```
 
-> 以上命令我们使用了超级用户 postgres 登录到主机地址为 localhost，端口号为 5432 的  PostgreSQL 数据库中并创建 pomelucedb 数据库
+> 以上命令我们使用了超级用户 postgres 登录到主机地址为 localhost，端口号为 5432 的 PostgreSQL 数据库中并创建 pomelucedb 数据库
 
 **3. 使用可视化工具创建数据库, 以 DataGrip 为例**
 
-* 在 Database Explorer 栏右击当前已连接的 PostgreSQL 数据库, 选择 new > Database
+- 在 Database Explorer 栏右击当前已连接的 PostgreSQL 数据库, 选择 new > Database
 
 ![可视化创建数据库1](psql004.imgs/image-20230716104034704.png)
 
-* 在弹出的 Create 面板填写要创建的数据库信息, 然后点 ok, 创建成功
+- 在弹出的 Create 面板填写要创建的数据库信息, 然后点 ok, 创建成功
 
 ![可视化创建数据库2](psql004.imgs/image-20230716104757324.png)
 
@@ -77,10 +77,10 @@ password ******
 
 lucasdb=# \l
                                                      数据库列表
-     名称    |  拥有者  | 字元编码  |    校对规则    |    Ctype    | ICU Locale | Locale Provider |       存取权限     
+     名称    |  拥有者  | 字元编码  |    校对规则    |    Ctype    | ICU Locale | Locale Provider |       存取权限
 ------------+----------+----------+-------------+-------------+------------+-----------------+--------------------
- lucasdb    | root     | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            | 
- pomelucedb | root     | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            | 
+ lucasdb    | root     | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            |
+ pomelucedb | root     | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            |
  postgres   | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            | =Tc/postgres      +
             |          |          |             |             |            |                 | postgres=CTc/postgres
  template0  | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            | =c/postgres       +
@@ -89,7 +89,7 @@ lucasdb=# \l
             |          |          |             |             |            |                 | postgres=CTc/postgres
 (5 行记录)
 
-lucasdb=# 
+lucasdb=#
 
 ```
 
@@ -100,7 +100,7 @@ lucasdb=#
 ```zsh
 lucasdb=# \c pomelucedb;
 您现在已经连接到数据库 "pomelucedb",用户 "root".
-pomelucedb=# 
+pomelucedb=#
 ```
 
 ### 修改数据库
@@ -146,21 +146,21 @@ drop database pomelucedb2;
 
 参数说明：
 
-* dbname: 要删除的数据库名
-* options: 参数可选项, 可以是以下值
+- dbname: 要删除的数据库名
+- options: 参数可选项, 可以是以下值
 
-| 选项                        | 描述                                                         |
-| --------------------------- | :----------------------------------------------------------- |
-| **-e**                      | 显示 dropdb 生成的命令并发送到数据库服务器。                 |
-| **-i**                      | 在做删除的工作之前发出一个验证提示。                         |
-| **-V**                      | 打印 dropdb 版本并退出。                                     |
-| **--if-exists**             | 如果数据库不存在则发出提示信息，而不是错误信息。             |
-| **--help**                  | 显示有关 dropdb 命令的帮助信息。                             |
-| **-h host**                 | 指定运行服务器的主机名。                                     |
-| **-p port**                 | 指定服务器监听的端口，或者 socket 文件。                     |
-| **-U username**             | 连接数据库的用户名。                                         |
-| **-w**                      | 连接时忽略输入密码。                                         |
-| **-W**                      | 连接时强制要求输入密码。                                     |
+| 选项                        | 描述                                                                          |
+| --------------------------- | :---------------------------------------------------------------------------- |
+| **-e**                      | 显示 dropdb 生成的命令并发送到数据库服务器。                                  |
+| **-i**                      | 在做删除的工作之前发出一个验证提示。                                          |
+| **-V**                      | 打印 dropdb 版本并退出。                                                      |
+| **--if-exists**             | 如果数据库不存在则发出提示信息，而不是错误信息。                              |
+| **--help**                  | 显示有关 dropdb 命令的帮助信息。                                              |
+| **-h host**                 | 指定运行服务器的主机名。                                                      |
+| **-p port**                 | 指定服务器监听的端口，或者 socket 文件。                                      |
+| **-U username**             | 连接数据库的用户名。                                                          |
+| **-w**                      | 连接时忽略输入密码。                                                          |
+| **-W**                      | 连接时强制要求输入密码。                                                      |
 | **--maintenance-db=dbname** | 删除数据库时指定连接的数据库，默认为 postgres，如果它不存在则使用 template1。 |
 
 ```zsh
@@ -168,7 +168,7 @@ $ dropdb -h localhost -p 5432 -U postgres pomelucedb
 password ******
 ```
 
-:::tip:
+:::tip
 
 dropdb 是 DROP DATABASE 的包装器
 
@@ -200,11 +200,11 @@ create table table_name(
 )
 ```
 
-* `create table` 是一个关键词, 用于告诉数据库系统将创建一个数据表
+- `create table` 是一个关键词, 用于告诉数据库系统将创建一个数据表
 
-* 表名字必需在同一模式中的其它表、 序列、索引、视图或外部表名字中唯一
+- 表名字必需在同一模式中的其它表、 序列、索引、视图或外部表名字中唯一
 
-* `create table` 在当前数据库创建一个新的空白表, 该表将由发出此命令的用户所拥有
+- `create table` 在当前数据库创建一个新的空白表, 该表将由发出此命令的用户所拥有
 
 2. 实例
 
@@ -263,7 +263,7 @@ alter table users rename to db_user;
 
 ### 删除表
 
-* 语法: drop table [table_name1, table_name2, ...]
+- 语法: drop table [table_name1, table_name2, ...]
 
 ```sql
 drop table db_user
@@ -273,7 +273,7 @@ drop table db_user
 
 在 PostgreSQL 中无法在创建数据表时对表和 column 进行注释, 需要在创建完成之后, 通过 comment 语句来添加
 
-* 语法: comment on option_name [ = value ]
+- 语法: comment on option_name [ = value ]
 
 ```sql
 comment on table users is '用户表';
@@ -283,4 +283,3 @@ comment on column users.age is '年龄';
 comment on column users.email is '邮箱';
 comment on column users.introduce is '介绍';
 ```
-
