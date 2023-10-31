@@ -66,6 +66,12 @@ password ******
 
 ![可视化创建数据库2](psql004.imgs/image-20230716104757324.png)
 
+:::tip **PS:**
+
+<span style='background: yellow; color: black;'>DataGrip 连接 PostgreSQL 时, 记得加上 -Duser.timezone=Asia/Shanghai (VM options), 否则会导致数据库时区变为 UTC</span>
+
+:::
+
 ### 查看数据库
 
 在命令行交互窗口, 输入 `\l` 命令查看所有数据库
