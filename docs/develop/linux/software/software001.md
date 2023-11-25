@@ -1,6 +1,6 @@
 # Rsnapshot 备份
 
-## 1.软件安装
+## 软件安装
 
 ```bash
 # archlinux
@@ -11,11 +11,11 @@ yum install epel-release -y # 如果之前没安装过第三方库 EPEL
 yum install rsnapshot -y
 ```
 
-## 2.ssh免密配置
+## SSH免密配置
 
 具体内容见: [ssh 免密配置](../syserver/syserver001.md)
 
-## 3.软件配置
+## 软件配置
 
 1. 配置文件默认在 /etc/rsnapshot.conf, 在修改之前建议先进行备份, 以便于恢复
 
@@ -82,7 +82,7 @@ backup root@ip:/example/data/   remote/ #备份远程目录
 
 配置完后, 保存并关闭 /etc/rsnapshot.conf 文件, 同时输入 rsnapshot configtest 命令验证配置是否成功, 如果成功, 会输出: `Syntax OK`
 
-## 4.数据备份
+## 数据备份
 
 1. 手动备份, 执行一下命令, 开启备份
 
@@ -101,7 +101,7 @@ rsnapshot daily
 0 22 15 * *  /usr/bin/rsnapshot monthly # 每月 15 号 22 点进行一次备份, 使用 monthly 级别
 ```
 
-## 5.多策略备份
+## 多策略备份
 
 上面的备份中, 使用不同的备份级别备份的目录都是一样的, 如果想使用不同级别备份不同的目录数据, 可以配置多份配置文件, 在执行命令时指定对应的配置文件, 来实现不同策略备份不同数据
 

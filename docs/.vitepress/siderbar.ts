@@ -50,8 +50,8 @@ const springNames: string[] = ['Restful 接口规范', 'Get 请求参数接受',
 const jsNames: string[] = ['If 判断条件', '三元运算符'];
 const webOtherNames: string[] = ['跨域解决方案', 'Cors 跨域资源共享'];
 
-const syserverNames: string[] = ['SSH 免密登录'];
-const softwareNames: string[] = ['Rsnapshot 备份', 'ElasticSerach 配置'];
+const syserverNames: string[] = ['SSH 免密登录', 'VPS 安装 Arch'];
+const softwareNames: string[] = ['Rsnapshot 备份', 'ElasticSerach 配置', 'Redis 安装配置'];
 const nginxNames: string[] = ['Nginx 汇总'];
 
 const psqlNames: string[] = ['PostgreSQL 安装', 'PostgreSQL 语法', 'PostgreSQL 数据类型', 'PostgreSQL DDL'];

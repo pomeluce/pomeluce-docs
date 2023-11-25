@@ -20,6 +20,12 @@ PubkeyAuthentication yes
 # root 就是 /root/.ssh
 # jor 就是 /home/jor/.ssh
 AuthorizedKeysFile .ssh/authorized_keys
+
+# 设置 ssh 连接心跳频率
+# ClientAliveInterval: 指定了服务器端向客户端请求响应的时间间隔, 默认是0, 不发送请求
+# ClientAliveCountMax: 指定了服务器发出请求后客户端没有响应的次数达到一定值, 就会自动断开
+ClientAliveInterval 60
+ClientAliveCountMax 7200000
 ```
 
 ## 2.生成密钥
