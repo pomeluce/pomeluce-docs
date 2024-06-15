@@ -64,22 +64,50 @@ cert_key = /ssl/path/ssl_private.key
 4. nginx 设置请求转发
 
 ```nginx
-server {    
+ # 处理 websocket 连接升级
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    '' close;
+}
+
+server {
     # listen       80;
-    listen       443 ssl;   
-    server_name  www.xxx.org;                                                                                                                            
-    location / {   
+    listen       443 ssl;
+    server_name  www.xxx.org;
+
+    location / {
         root    html;
-        index   index.html index.htm; 
-        proxy_pass https://localhost:3000; # grafana 访问地址 
+        index   index.html index.htm;
+        proxy_pass https://localhost:3000; # grafana 访问地址
         proxy_set_header Host $http_host; # 设置请求头 host, 防止 api/ds/query 获取数据 not-allowed
-        proxy_redirect default;    
+        proxy_redirect default;
         proxy_max_temp_file_size 0k;
         proxy_connect_timeout 30;
-        proxy_send_timeout 60; 
-        proxy_read_timeout 60; 
+        proxy_send_timeout 60;
+        proxy_read_timeout 60;
         proxy_next_upstream error timeout invalid_header http_502;
-    }  
+    }
+
+    # websocket 连接升级
+    location /api/live/ws {
+        proxy_pass https://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $http_host;
+    }
 }
 ```
 
+### 超时设置
+
+- 编辑配置文件, 可选时间维度: `m (minutes), h (hours), d (days), w (weeks), M (month)`
+
+```ini
+
+# 经过认证的用户在下次访问之前可以处于非活动状态的最长时间(持续时间), 超过这个时间将需要重新登录 既两次请求之间时间间隔
+login_maximum_inactive_lifetime_duration = 30m
+
+# 经过认证的用户自登录时间起算, 在需要重新登录之前可以保持登录状态的最长时间(持续时间) -> 既自登录以后的持续时间
+login_maximum_lifetime_duration = 1h
+```

@@ -8,17 +8,17 @@ export default defineConfig({
   description: 'Pomeluce 文档库',
   head: [
     ['link', { rel: 'icon', href: '/docs/pomeluce.ico' }],
-    ['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css', crossorigin: '' }],
+    ['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css', crossorigin: '' }],
   ],
-  base: '/docs/',
+  base: '/',
   lang: 'zh-CN',
   lastUpdated: true,
   markdown: {
     theme: 'one-dark-pro',
-    config: md => {
-      md.use(markdownItKatex);
-    },
+    config: md => md.use(markdownItKatex),
+    lineNumbers: true,
   },
+  outDir: '../../../docs',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     outlineTitle: '本页目录',
