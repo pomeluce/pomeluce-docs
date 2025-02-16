@@ -16,6 +16,6 @@
   "license": "ISC",
   "devDependencies": {
     "markdown-it-katex": "^2.0.3",
-    "vitepress": "1.2.3"
+    "vitepress": "1.6.3"
   }
 }
